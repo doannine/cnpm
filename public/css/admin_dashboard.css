@@ -1,0 +1,129 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b9e6ed;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    color: white;
+    padding: 15px 30px;
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.navbar .add-btn {
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.navbar .add-btn:hover {
+    background: #218838;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #28a745;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.actions .btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: white;
+    transition: background 0.3s;
+    flex: 1;
+    text-align: center;
+}
+
+.actions .edit-btn {
+    background: #007bff;
+}
+
+.actions .edit-btn:hover {
+    background: #0056b3;
+}
+
+.actions .delete-btn {
+    background: #dc3545;
+}
+
+.actions .delete-btn:hover {
+    background: #c82333;
+}

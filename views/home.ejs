@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="main sing-up">
+            <div class="sing-in-form form-container">
+                <h1>sing in</h1>
+                <!-- <ul>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-google-plus-g"></i></i></li>
+                </ul> -->
+                <p>our use your account</p>
+                <form action="/login" id="sign-in" method="POST">
+                    <input type="email" placeholder="email" name="email">
+                    <input type="password" placeholder="password" name="password">
+                    <p><a>forgot your password?</a></p>
+                    <button type="submit">sing in</button>
+                </form>
+            </div>
+            <div class="sing-up-form form-container">
+                <h1>sing up</h1>
+                <!-- <ul>
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                    <li><i class="fa-brands fa-google-plus-g"></i></i></li>
+                </ul> -->
+                <p>or use your email for registration</p>
+                <form action="/signup" id="sign-out" method="POST">
+                    <input type="text" placeholder="name" name="name">
+                    <input type="email" placeholder="email" name="email">
+                    <input type="password" placeholder="password" name="password">
+                    <button type="submit">sing up</button>
+                </form>
+            </div>
+            <div class="sliding-board">
+                <div class="wide-borad">
+                    <div class="board sing-in">
+                        <h1>Welcome Back!</h1>
+                        <p>
+                            To keep connected with us please login with your personal info
+                        </p>
+                        <button class="singIn">sing in</button>
+                    </div>
+                    <div class="board sing-up">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="singUp">sing up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slideBoard = document.querySelector(".sliding-board");
+        const singUp = document.querySelector(".singUp");
+        const singIn = document.querySelector(".singIn");
+
+        const slidingState = document.querySelector(".main");
+
+        singIn.addEventListener("click", function () {
+            slideBoard.classList.add("sliding");
+            slidingState.classList.replace("sing-up", "sing-in");
+        });
+
+        singUp.addEventListener("click", function () {
+            slideBoard.classList.remove("sliding");
+            slidingState.classList.replace("sing-in", "sing-up");
+        });
+
+
+        // Gắn sự kiện vào nút "Sign In"
+        document.querySelector('#sign-in button').addEventListener('click', validateLogin);
+
+        // Gắn sự kiện cho nút "Sign Up" trong form đăng ký
+        document.querySelector('.sing-up-form button').addEventListener('click', redirectToSignIn);
+
+
+
+    </script>
+
+
+</body>
+
+</html>

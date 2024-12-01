@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Phone</title>
+    <link rel="stylesheet" href="/css/add_edit_phone.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Edit Phone</h1>
+        <form action="/edit_phone/<%= phone.id %>" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Phone Name</label>
+                <input type="text" id="name" name="name" value="<%= phone.name %>" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Brand</label>
+                <input type="text" id="brand" name="brand" placeholder="Enter phone name" value="<%= phone.brand %>">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4"><%= phone.description %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price ($)</label>
+                <input type="number" id="price" name="price" value="<%= phone.price %>" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Stock</label>
+                <input type="number" id="stock" name="stock" placeholder="Enter phone price" step="1"
+                    value="<%= phone.stock %>" required>
+            </div>
+            <div class=" form-group">
+                <label for="image">Upload New Image (Optional)</label>
+                <input type="file" id="image" name="image" accept="image/*">
+                <p>Current Image:</p>
+                <img src="/uploads/<%= phone.image %>" alt="<%= phone.name %>" class="preview-img">
+            </div>
+            <button type="submit" class="btn submit-btn">Save Changes</button>
+        </form>
+        <a href="/admin_dashboard" class="btn back-btn">Back to Dashboard</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="/css/user_dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Our Products</h1>
+        <div class="row">
+            <% phones.forEach(product=> { %>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="card">
+                        <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="card-img">
+                        <div class="card-body">
+                            <h3>
+                                <%= product.name %>
+                            </h3>
+                            <p class="price">$<%= product.price %>
+                            </p>
+                            <a href="/view_detail/<%= product.id %>" class="btn view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>

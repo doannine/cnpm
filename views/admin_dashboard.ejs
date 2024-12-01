@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Admin Dashboard</h1>
+            <a href="/add_phone" class="btn add-btn">Add New Product</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <% phones.forEach(product=> { %>
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card">
+                            <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="card-img">
+                            <div class="card-body">
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
+                                <p class="price">$<%= product.price %>
+                                </p>
+                                <p class="description">
+                                    <%= product.description.substring(0, 50) %>...
+                                </p>
+                                <div class="actions">
+                                    <a href="/edit_phone/<%= product.id %>" class="btn edit-btn"><i
+                                            class="fas fa-edit"></i> Edit</a>
+                                    <a href="/delete_phone/<%= product.id %>" class="btn delete-btn"><i
+                                            class="fas fa-trash"></i> Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Detail</title>
+    <link rel="stylesheet" href="/css/view_detail.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="product-detail">
+            <img src="/uploads/<%= phone.image %>" alt="<%= phone.name %>" class="product-img">
+            <div class="product-info">
+                <h1>
+                    <%= phone.name %>
+                </h1>
+                <p class="price">$<%= phone.price %>
+                </p>
+                <p class="description">
+                    <%= phone.description %>
+                </p>
+                <a href="/user_dashboard" class="btn back-btn">Back to Products</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
